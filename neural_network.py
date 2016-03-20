@@ -105,5 +105,9 @@ class NNetwork:
             activated = self.__sigmoid(w_sum)
             self.output_layer[i] = activated
 
+        max_item = max(self.output_layer)
         for i in range(len(self.output_layer)):
-            print(i, ": ", self.output_layer[i] * 1000)
+            postfix=""
+            if self.output_layer[i] == max_item:
+                postfix = "(!!!)"
+            print(i, ": ", self.output_layer[i] * 1000, postfix)
